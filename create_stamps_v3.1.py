@@ -48,7 +48,7 @@ def createCircStamp():
 					if type == 2:
 						globals()[item[1]] = float(ret['Value'])
 					if type == 1:
-						globals()[item[1]] = int(ret['Value'])
+						globals()[item[1]] = int(ret['Value'].split('.')[0])
 					if type == 0:
 						globals()[item[1]] = str(ret['Value'])
 					print(item[1], globals()[item[1]])				
