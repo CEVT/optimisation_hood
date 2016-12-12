@@ -12,7 +12,7 @@ def createCircStamp():
 	
 	# n_width = 15
 	# n_height = 12
-	dist_from_feature = 30
+	# dist_from_feature = 30
 	point_name = 'cone'
 	##----------------------------------------
 	## Read mesh param and quality files
@@ -36,7 +36,7 @@ def createCircStamp():
 				['R2', 'param_R2', 2], ['weldD', 'param_WD', 2], ['searchDist', 'search_dist', 2],
 				['innerPID', 'pid_inner', 1],	['outerPID', 'pid_outer', 1], ['gluePID', 'pid_glue', 1],
 				['glueMeshLen', 'glueMeshLen', 2], ['tGlue', 'tGlue', 2], ['col', 'n_width', 1],
-				['row', 'n_height', 1]]
+				['row', 'n_height', 1], ['feaatureDist', 'dist_from_feature', 2]]
 				
 	
 	for item in parList:
