@@ -64,7 +64,7 @@ def createCircStamp():
 			num_hexas = opt
 			break
 	
-	_distribute_points(pid_inner, n_width, n_height, dist_from_feature, point_name)
+	_distribute_points(pid_inner, n_width, n_height, dist_from_feature, point_name, param_D)
 	
 	params = [param_D, param_H, param_A, param_R1, param_R2]
 	points = base.CollectEntities(0, None, "POINT")
@@ -83,12 +83,12 @@ def _check_dist(pos1, pos2, tol):
 	c2 = pos1[1] - pos2[1]
 	if abs(c2) > tol:
 		return(False)
-	dist = ((c1)**2 + (c2)**2)**0.5
+	dist = ((c1)**2 + (c2)**2)**0.5 + 0.001
 	if dist > tol:
 		return(False)
 	else:
 		return(dist)		
-def _distribute_points(pid, n_width, n_height, dist_from_feature, point_name):
+def _distribute_points(pid, n_width, n_height, dist_from_feature, point_name, param_D):
 	##
 	## Isolate main perimeter and exlude regions
 	##
@@ -137,6 +137,7 @@ def _distribute_points(pid, n_width, n_height, dist_from_feature, point_name):
 			if _check_dist((in_pos[0], in_pos[1]), (pos[0], pos[1]), dist_from_feature):
 				toExclude = True
 				break
+								
 		if toExclude:
 			continue
 		##
@@ -204,6 +205,7 @@ def _distribute_points(pid, n_width, n_height, dist_from_feature, point_name):
 		## find closest point
 		##
 		pnts = []
+		point_pos = None
 		for x_coord in x_coords:
 			min_dist = 999
 			search_pos = (x_coord, y_coord)
@@ -214,17 +216,25 @@ def _distribute_points(pid, n_width, n_height, dist_from_feature, point_name):
 					if dist < min_dist:
 						min_dist = dist
 						point_pos = pos
-			toClose = False
-			for pos in pnts:
-				xy_pos = (pos[0], pos[1])
-				dist = _check_dist((point_pos[0], point_pos[1]), xy_pos, dist_from_feature) 
-				if dist:
-					toClose = True
-			if toClose:
-				continue
-			pnts.append(point_pos)
-			pnt = base.Newpoint(point_pos[0], point_pos[1], point_pos[2])
-			base.SetEntityCardValues(constants.NASTRAN, pnt, {'Name' : point_name})		
+						
+			toClose = False			
+			if point_pos:
+				for p in pnts:
+					xy_p = (p[0], p[1])
+					distp = _check_dist((point_pos[0], point_pos[1]), xy_p, dist_from_feature) 
+					if distp:
+						toClose = True
+					else:
+						distD = _check_dist((point_pos[0], point_pos[1]), xy_p, param_D) 
+						if distD:
+							toClose = True
+					
+				if toClose:
+					continue
+				pnts.append(point_pos)
+				pnt = base.Newpoint(point_pos[0], point_pos[1], point_pos[2])
+				base.SetEntityCardValues(constants.NASTRAN, pnt, {'Name' : point_name})	
+				point_pos = None
 def spotweldCreat(point, cnctns, param_WD, pid_inner, pid_outer, search_dist, pid_glue, num_hexas):
 	ret = base.GetEntityCardValues(0, point, ('X', 'Y', 'Z'))
 	position = (ret['X'], ret['Y'], ret['Z'])
@@ -273,8 +283,6 @@ def meshRec(doReconstruct, num_neighb, max_reconstruct, expand_level, shells):
 			mesh.ReconstructViolatingShells(expand_level)
 			off_elements = base.CalculateOffElements()
 			n += 1
-
+			
 # if __name__ == '__main__':
-	
-
 	# createCircStamp()
