@@ -238,6 +238,7 @@ def _distribute_points(pid, n_width, n_height, dist_from_feature, point_name, pa
 def spotweldCreat(point, cnctns, param_WD, pid_inner, pid_outer, search_dist, pid_glue, num_hexas):
 	ret = base.GetEntityCardValues(0, point, ('X', 'Y', 'Z'))
 	position = (ret['X'], ret['Y'], ret['Z'])
+		
 	cnctn = connections.CreateConnectionPoint("SpotweldPoint_Type", position)
 	if cnctn:
 		cnctns.append(cnctn)
@@ -246,7 +247,6 @@ def spotweldCreat(point, cnctns, param_WD, pid_inner, pid_outer, search_dist, pi
 		fields["Number of hexas"] = num_hexas
 		fields["Contact"] = "no"
 		ret = base.SetEntityCardValues(0, cnctn, fields)
-		return(cnctns)
 		if ret:
 			print('Failed to set params to spot')
 			print(fields)
@@ -257,6 +257,7 @@ def spotweldCreat(point, cnctns, param_WD, pid_inner, pid_outer, search_dist, pi
 			outer_skin_pos = cnctn_projs[0][1][0]
 			fields = {'X':outer_skin_pos[0], 'Y':outer_skin_pos[1], 'Z':outer_skin_pos[2]}
 			ret = base.SetEntityCardValues(0, cnctn, fields)
+			return(cnctns)
 			if ret:
 				print('Failed to set new position to spot')
 				print(fields)
