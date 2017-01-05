@@ -1,25 +1,36 @@
 <html>
+<head>
+<link rel="stylesheet" type="text/css" href="../script/logbook.css" />
 
+<script src="../script/sorttable.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="../script/showOnly.js"></script>
+
+
+</head>
 
 <body>
 	
+	<div align="right"><button id="btn"  style="height:40px; width:100px"  form-submitted = "no">show only</button></div>
 	<table>
-	
 	<tr>${navigationBar}	</tr>
 	</table>
-	<table>
-	
-
-	
-	${Picturetable}
-	
-	
-	
-	<tr><a href="${isoPath}"/><button>iso</button></tr>
-	<tr><a href="${topPath}"/><button>top</button></tr>
-	<tr><a href="${cupPath}"/><button>cup</button></tr>
+	<table>	
+	<tr>
+		<td><a href="${ver}pic_iso${itrVar}.html"/><button>iso</button></td>
+		<td><a href="${ver}pic_top${itrVar}.html"/><button>top</button></td>
+		<td><a href="${ver}pic_cup${itrVar}.html"/><button>cup</button></td>
+		<td><a href="${ver}AnalysisResults${itrVar}.html"/><button>AnalysisResult</button></td>
+		<td><a href="all${allType}.html"/><button>all</button></td>
+	</tr>	
 	</table>
 
+	
+	<table id="gradient-style" class="sortable">
+	<thead>${tableHead}</thead>
+	<tbody>${tableBody}</tbody>
+	</table>
+	
 
 </body>
 
