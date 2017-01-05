@@ -1,0 +1,317 @@
+body{
+ font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+ color: #404040;
+ background: #ffffff url("pic/cevtlogo.png") no-repeat right top scroll;
+ margin-right: 10px;
+ margin-left: 20px;
+} 
+
+h1{ 
+ color: #039;
+ text-transform: uppercase; 
+ margin: 45px;
+}
+
+h2{ 
+ color: #014576;
+ text-transform: uppercase; 
+ margin: 45px;
+}
+
+h3{ 
+ color: #86a2b8;
+ text-transform: uppercase; 
+ margin: 45px;
+}
+
+a{
+ margin: 1px;
+}
+
+/* rotate heading of table */
+
+th.rotate {
+  /* Something you can count on */
+  height: 140px;
+  white-space: nowrap;
+}
+
+th.rotate > div {
+  transform: 
+    translate(0px, 55px)
+    rotate(-90deg);
+  width: 30px;
+  padding: 5px 10px;
+}
+
+
+/* These aren't needed and will be weird if transforms don't work */
+.csstransforms & th.rotate {
+  height: 140px;
+  white-space: nowrap;
+}
+#gradient-style
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	margin: 20px;
+	text-align: left;
+	border-collapse: collapse;
+}
+#gradient-style th
+{
+	font-size: 13px;
+	font-weight: normal;
+	padding: 2px;
+	/* background: #b9c9fe url('cell_bg/gradhead.png') repeat-y; */
+	border-right: 2px solid #d3ddff;
+	color: #039;
+	text-align: center;
+	
+    vertical-align: middle;
+	
+}
+
+#gradient-style th.alt1
+{
+	background: #b9c9fe url('pic/cell_bg/blupink.png') repeat-y;
+	background: #b9c9fe url('pic/cell_bg/gradhead.png') repeat-x;
+}
+
+#gradient-style th.alt2
+{
+	background: #D9FFF2;
+	border-top: 2px solid #d3ddff;
+}
+
+#gradient-style th.alt3
+{
+	background: #FFFFDB;/* #CCCCFF; */
+}
+
+#gradient-style th.alt4
+{
+	background:#E1E1E1;
+}
+
+#gradient-style th.alt5
+{
+	background: 	#E2F4E4;/*  #EBF5FF  ;*/
+	font-size: 13px;
+	color: #99c;	
+   font-weight: bold; 
+}
+
+#gradient-style  td.alt1
+{
+	background: #E2F4E4 ;
+	font-size: 12px;
+	color: #99c;
+}
+
+#gradient-style th.statRed
+{
+	background:#FFB2B2;
+}
+
+#gradient-style th.statYellow
+{
+	background:#FFFF8C;
+}
+
+#gradient-style th.statGreen
+{
+	background:#B2FF8C;
+}
+
+#gradient-style td
+{
+/* padding: 8px; 
+	border-bottom: 1px solid #fff; */
+	color: #669;
+/* 	border-top: 1px solid #fff;
+	border-right: 2px solid #d3ddff; */
+	background: #e8edff url('pic/cell_bg/gradback.png') repeat-x;
+}
+
+#gradient-style tfoot tr td
+{
+	background: #e8edff;
+	font-size: 12px;
+	color: #99c;
+}
+#gradient-style tbody tr:hover td
+{
+	background: #d0dafd url('pic/cell_bg/gradhover.png') repeat-x;
+	color: #339;
+}
+
+#gradient-style1
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 14px;
+	margin: 20px;
+	text-align: left;
+	border-collapse: collapse;
+}
+#gradient-style1 th
+{
+	font-size: 13px;
+	font-weight: normal;
+	padding: 8px;
+	background: #b9c9fe url('pic/cell_bg/gradhead.png') repeat-x;
+	border-top: 2px solid #d3ddff;
+	border-bottom: 1px solid #fff;
+	color: #039;
+}
+#gradient-style1 th1
+{
+	font-size: 13px;
+	font-weight: normal;
+	padding: 8px;
+	background: #b9c9fe url('pic/cell_bg/gradhead.png') repeat-x;
+	border-top: 2px solid #d3ddff;
+	border-bottom: 1px solid #fff;
+	color: #039;
+}
+
+#gradient-style1 td
+{
+	padding: 8px; 
+	border-bottom: 1px solid #fff;
+	color: #669;
+	border-top: 1px solid #fff;
+	background: #e8edff url('pic/cell_bg/gradback.png') repeat-x;
+}
+#gradient-style1 tfoot tr td
+{
+	background: #e8edff;
+	font-size: 12px;
+	color: #99c;
+}
+#gradient-style1 tbody tr:hover td
+{
+	background: #d0dafd url('pic/cell_bg/gradhover.png') repeat-x;
+	color: #339;
+}
+
+
+
+#page-style-header {
+    background-color:black url("pic/cevtlogo.png") no-repeat right top scroll;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#page-style-nav {
+    line-height:25px;
+    background-color:#eeeeee;
+    height:50%;
+    width:5%;
+    float:left;
+    padding:5px;	      
+}
+#page-style-section {
+    width:80%;
+    float:left;
+    padding:10px;
+align:center;	
+}
+#page-style-footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:25px;
+}
+
+
+#button div 
+{
+ margin: 20px;
+}
+#button input
+{
+ margin: 20px;
+}
+
+.offscreen { 
+  position: absolute; 
+  top: -30em; 
+  left: -300em; 
+} 
+
+div#hmenu { 
+   margin: 0; 
+   padding: .3em 0 .3em 0; 
+   background: #ddeebb; 
+   width: 100%; 
+   text-align: center; 
+} 
+
+div#hmenu ul { 
+   list-style: none; 
+   margin: 0; 
+   padding: 0; 
+} 
+
+div#hmenu ul li { 
+   margin: 0; 
+   padding: 0; 
+   display: inline; 
+} 
+
+div#hmenu ul a:link{ 
+   margin: 0; 
+   padding: .3em .4em .3em .4em; 
+   text-decoration: none; 
+   font-weight: bold; 
+   font-size: medium; 
+   color: #004415; 
+} 
+
+div#hmenu ul a:visited{ 
+   margin: 0; 
+   padding: .3em .4em .3em .4em; 
+   text-decoration: none; 
+   font-weight: bold; 
+   font-size: medium; 
+   color: #227755; 
+} 
+
+div#hmenu ul a:active{ 
+   margin: 0; 
+   padding: .3em .4em .3em .4em; 
+   text-decoration: none; 
+   font-weight: bold; 
+   font-size: medium; 
+   color: #227755; 
+} 
+
+div#hmenu ul a:hover{ 
+   margin: 0; 
+   padding: .3em .4em .3em .4em; 
+   text-decoration: none; 
+   font-weight: bold; 
+   font-size: medium; 
+   color: #f6f0cc; 
+   background-color: #227755; 
+}
+
+/*----column toggle default----*/
+/* Manually hidden */
+
+/* @media screen and (min-width: 20em) {
+   .my-custom-class th.ui-table-priority-1,
+   .my-custom-class td.ui-table-priority-1 {
+     display: table-cell;
+   }
+}
+/* Show priority 2 at 480px (30em x 16px) 
+@media screen and (min-width: 30em) {
+   .my-custom-class  th.ui-table-priority-2,
+   .my-custom-class td.ui-table-priority-2 {
+    display: none ;
+   }
+}
+ */
